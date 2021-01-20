@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        span{border: solid 1px #ACACAC; padding: 2px;}
+    </style>
+    <script language="javascript">
+
+        var h = null; // Giờ
+        var m = null; // Phút
+        var s = null; // Giây
+
+        var timeout = null; // Timeout
+
+        function start()
+        {
+            // lấy giá trị ban đầu
+            if(h===null){
+                h=parseInt(document.getElementById('h_val').value);
+                m=parseInt(document.getElementById('m_val').value);
+                s=parseInt(document.getElementById('s_val').value);
+            }
+            //---------------------------------------------------------
+            if(s===-1){
+                m-=1;
+                s=59;
+            }
+
+            if(m===-1){
+                h-=1;
+                m=59;
+            }
+
+            if(h===-1){
+                clearTimeout(timeout);
+                alert('Hết giờ');
+                return false;
+            }
+
+            document.getElementById('h').innerText=h.toString();
+            document.getElementById('m').innerText=m.toString();
+            document.getElementById('s').innerText=s.toString();
+
+            timeout=setTimeout(function () {
+                s--;
+                start();
+            },1000
+            );
+        }
+
+        function stop(){
+            clearTimeout(timeout);
+        }
+    </script>
+</head>
+<body>
+<div>
+    <strong>
+        Nhập thông tin ban đầu: <br/>
+    </strong>
+    <input type="text" id="h_val" placeholder="Giờ" value=""/> <br/>
+    <input type="text" id="m_val" placeholder="Phút" value=""/> <br/>
+    <input type="text" id="s_val" placeholder="Giây" value=""/>
+    <input type="button" value="start" onclick="start()"/>
+    <input type="button" value="Stop" onclick="stop()"/>  <br/> <br/>
+</div>
+
+<div>
+    <span id="h">Giờ</span> :
+    <span id="m">Phút</span> :
+    <span id="s">Giây</span>
+</div>
+</body>
+</html>

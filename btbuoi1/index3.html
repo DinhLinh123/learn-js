@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+       body {
+           background-color: #FF6666;
+
+       }
+       .main{
+           margin: auto;
+           width: 40%;
+           padding: 10px;
+       }
+       .kq{
+           width: 250px;
+           height: 60px;
+           background-color: #009999;
+           margin-top: 20px;
+           text-align: center;
+           line-height: 60px;
+       }
+    </style>
+    <script>
+
+
+            function tinhtien(){
+                let m=document.getElementById("price").value;
+                let d=document.getElementById("tu");
+                let t=d.options[d.selectedIndex].text;
+                let c=document.getElementById("sang");
+                let s=c.options[c.selectedIndex].text;
+
+
+                //------------------------------------
+                let uv=m*232000;
+                let ue=m* 0.82275;
+                //--------------------------------------------
+                let ev=m*28.045;
+                let eu=m*1.2154;
+                //-------------------------------------------------
+                let vv=m;
+                let ve=m*0.035742369;
+                let vu=m*0.00004310344;
+
+                if((t=="USD") && (s=="VND")){
+                    document.getElementById("kq").value=uv.toString();
+                }
+                if((t=="USD") && (s=="EU")){
+                    document.getElementById("kq").value=ue.toString();
+                }
+                if((t=="EU") && (s=="VND")){
+                    document.getElementById("kq").value=ev.toString();
+                }
+                if((t=="EU") && (s=="USD")){
+                    document.getElementById("kq").value=eu.toString();
+                }
+                if((t=="VND") && (s=="EU")){
+                    document.getElementById("kq").value=vu.toString();
+                }
+                if((t=="VND") && (s=="USD")){
+                    document.getElementById("kq").value=vu.toString();
+                }
+                if(((t=="USD") && (s=="USD")) || ((t=="VND") && (s=="VND")) || ((t=="EU") && (s=="EU"))){
+                    document.getElementById("kq").value=vv.toString();
+                }
+
+            }
+
+
+
+    </script>
+</head>
+<body>
+    <div class="main">
+        <div>
+            <input type="number" id="price" placeholder="money" value="">
+            <select id="tu" >
+                <option  value="usd">USD</option>
+                <option  value="eu">EU</option>
+                <option value="vnd">VND</option>
+            </select>
+            =>
+            <select id="sang" >
+                <option  value="vnd">VND</option>
+                <option  value="eu">EU</option>
+                <option  value="usa">USD</option>
+            </select>
+            <input type="button" value="Convert"  onclick="tinhtien()">
+
+        </div>
+        <div class="kq">
+            <input type="text " id="kq"/>
+        </div>
+    </div>
+
+</body>
+</html>
