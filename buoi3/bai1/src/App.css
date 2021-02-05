@@ -1,0 +1,25 @@
+.title{
+  color: #000080;
+  margin-top: 20px;
+}
+#search{
+  margin: 20px;
+}
+.list{
+  background-color: #87CEFA;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+}
+h1{
+  color: #000080;
+  margin-top: 20px;
+}
+.save{
+  display: flex;
+}
+
+.nut{
+  
+    margin-right: 10%;
+}

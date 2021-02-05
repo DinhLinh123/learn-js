@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js.js"></script>
+    <style type="text/css">
+         .container {
+            font-size: 10px;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: antiquewhite;
+        }
+
+        .content-container {
+            width: 40%;
+            height: 20vh;
+            background: salmon;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            position: relative;
+        }
+        .temporary{
+            width: 60%;
+        }
+        .content {
+            width: 80%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .result {
+            width: 40%;
+            background: rgb(67, 168, 163);
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #result{
+            font-size: 24px;
+            font-weight: bold;
+            color: red;
+        }
+        #close{
+            background-color:white;
+            position: absolute;
+            right: 4px;
+            top: 0px;
+            padding: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="temporary">
+
+            <button id="change">Change currency</button>
+        </div>
+        <div id="content-container" class="content-container">
+            <p id="close">x</p>
+            <div class="content">
+                <input id="input" type="number" />
+                <select name="source" id="source">
+                </select>
+                <span> => </span>
+                <select name="target" id="target">
+                </select>
+                <button type="button" id="convert">Convert</button>
+            </div>
+            <div class="result">
+                <p id="result"></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
