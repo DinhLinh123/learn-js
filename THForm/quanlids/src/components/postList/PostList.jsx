@@ -20,11 +20,11 @@ function PostList(props) {
                   <th>Hành động</th>
                 </tr> 
                 {posts.map(post => (
-                <tr>
+                <tr key={post.id}>
                     
                     
-                    <td key={post.id}>{post.title}</td>
-                    <td key={post.id}>{post.updatedAt}</td>
+                    <td >{post.title}</td>
+                    <td >{post.updatedAt}</td>
                     {/* <td><button onClick={() => handleClick(todo)}>Xóa</button> </td>*/}
                     
                     
