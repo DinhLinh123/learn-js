@@ -1,0 +1,27 @@
+.App {
+  text-align: center;
+  display: flex;
+  
+}
+
+.function {
+
+  display: flex;
+  justify-self: flex-end;
+}
+
+.input-products {
+
+  text-align: left;
+}
+
+.add-work {
+
+  text-align: left;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
